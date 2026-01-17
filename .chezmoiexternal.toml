@@ -6,10 +6,7 @@ type = "git-repo"
 url = "git@github.com:weiying-chen/sub.git"
 refreshPeriod = "24h"
 
-# Watchpick is currently a local folder at `~/python/watchpick/` and does not appear
-# to be a git repo yet. Once it has a remote, uncomment and set `url`.
-#
-# ["python/watchpick"]
-# type = "git-repo"
-# url = "git@github.com:weiying-chen/watchpick.git"
-# refreshPeriod = "24h"
+["python/watchpick"]
+type = "git-repo"
+url = "git@github.com:weiying-chen/watchpick.git"
+refreshPeriod = "24h"
