@@ -12,6 +12,8 @@ This repo is script-oriented (no Makefile/package manager at the root).
 
 - Preview/apply dotfiles with chezmoi: `chezmoi diff`, `chezmoi apply -v`
 - Check managed files: `chezmoi status`, `chezmoi verify` (if configured)
+- Refresh dotfiles + externals: `chezmoi update` (external refresh honors `.chezmoiexternal.toml` + `refreshPeriod`)
+- Force-refresh externals now: `chezmoi update -R always` (or `chezmoi apply -R always`)
 - Show CLI help (after apply): `watchpick --help`
 - Common env vars: `TEXT_ROOT` (default search root), `SUB_WATCH_TS` (path to `watch.ts`), `BASELINE_ROOT` (where baselines live)
 - Expected tools: `python3` (3.10+), `npx`/`tsx` (Node), optional `fzf` (picker UI), optional `wl-copy` (clipboard)

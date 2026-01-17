@@ -1,0 +1,15 @@
+# External repositories/files that chezmoi can fetch into the destination.
+# Refreshed when you run `chezmoi apply`/`chezmoi update` (see `-R/--refresh-externals`).
+
+["node/sub"]
+type = "git-repo"
+url = "git@github.com:weiying-chen/sub.git"
+refreshPeriod = "24h"
+
+# Watchpick is currently a local folder at `~/python/watchpick/` and does not appear
+# to be a git repo yet. Once it has a remote, uncomment and set `url`.
+#
+# ["python/watchpick"]
+# type = "git-repo"
+# url = "git@github.com:weiying-chen/watchpick.git"
+# refreshPeriod = "24h"
