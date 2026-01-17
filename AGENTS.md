@@ -4,7 +4,7 @@
 
 - This is a `chezmoi` source-state repo. Files/dirs like `private_dot_local/` map to targets like `~/.local/` when applied.
 - `private_dot_local/bin/`: user-facing entrypoints; e.g. `symlink_watchpick` is materialized as `watchpick` on the target machine.
-- `python/watchpick/`: Python implementation for the `watchpick` helper. Files prefixed with `executable_` are meant to be installed with the executable bit (e.g., `executable_watchpick.py` → `watchpick.py`).
+- The `watchpick` Python source itself is kept outside this repo (e.g. `~/python/watchpick/watchpick.py`); this repo only manages the `~/.local/bin/watchpick` symlink to it.
 
 ## Build, Test, and Development Commands
 
@@ -12,9 +12,7 @@ This repo is script-oriented (no Makefile/package manager at the root).
 
 - Preview/apply dotfiles with chezmoi: `chezmoi diff`, `chezmoi apply -v`
 - Check managed files: `chezmoi status`, `chezmoi verify` (if configured)
-- Show CLI help: `python3 python/watchpick/executable_watchpick.py --help`
-- Run against a directory: `python3 python/watchpick/executable_watchpick.py --root ~/texts --recursive`
-- Print the underlying `npx tsx` command without executing: `python3 python/watchpick/executable_watchpick.py --print --no-run`
+- Show CLI help (after apply): `watchpick --help`
 - Common env vars: `TEXT_ROOT` (default search root), `SUB_WATCH_TS` (path to `watch.ts`), `BASELINE_ROOT` (where baselines live)
 - Expected tools: `python3` (3.10+), `npx`/`tsx` (Node), optional `fzf` (picker UI), optional `wl-copy` (clipboard)
 
@@ -28,8 +26,8 @@ This repo is script-oriented (no Makefile/package manager at the root).
 
 No automated test suite currently.
 
-- Fast sanity checks: `python3 -m py_compile python/watchpick/executable_watchpick.py`
-- Smoke test: run with `--print --no-run` to validate argument parsing and command generation.
+- Fast sanity checks (external repo): `python3 -m py_compile ~/python/watchpick/watchpick.py`
+- Smoke test: run `watchpick --print --no-run` to validate argument parsing and command generation.
 
 ## Commit & Pull Request Guidelines
 
