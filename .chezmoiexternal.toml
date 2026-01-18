@@ -10,3 +10,8 @@ refreshPeriod = "24h"
 type = "git-repo"
 url = "git@github.com:weiying-chen/watchpick.git"
 refreshPeriod = "24h"
+
+["python/word"]
+type = "git-repo"
+url = "git@github.com:weiying-chen/word.git"
+refreshPeriod = "24h"
