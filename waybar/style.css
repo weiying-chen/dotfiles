@@ -376,6 +376,14 @@ label:focus {
     border-bottom-right-radius: 15px;
 }
 
+/* CPU: match network shape */
+#cpu {
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+    border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 15px;
+}
+
 /* Keep power profile states same gray as other widgets */
 #power-profiles-daemon.performance,
 #power-profiles-daemon.balanced,
@@ -411,6 +419,8 @@ window#waybar #cpu * {
 #pulseaudio.muted {
     background-color: @red;
     color: @fg;
+    border-top-left-radius: 9999px;
+    border-top-right-radius: 0;
 }
 
 /* Power profile accent */
