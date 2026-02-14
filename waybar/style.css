@@ -65,6 +65,9 @@ button:hover {
     color: #ffffff;
     border-radius: 9999px;
     border-top-left-radius: 0;
+    border-top-right-radius: 0;
+    border-bottom-left-radius: 8px;
+    border-bottom-right-radius: 8px;
 }
 
 #workspaces button:hover {
@@ -107,6 +110,9 @@ button:hover {
     color: #ffffff;
     border-radius: 9999px;
     border-top-left-radius: 0;
+    border-top-right-radius: 0;
+    border-bottom-left-radius: 8px;
+    border-bottom-right-radius: 8px;
 }
 
 #window,
@@ -361,6 +367,15 @@ label:focus {
     border-top-left-radius: 0;
 }
 
+/* Network: flat top, softer bottom corners */
+#network,
+#network.disconnected {
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+    border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 15px;
+}
+
 /* Keep power profile states same gray as other widgets */
 #power-profiles-daemon.performance,
 #power-profiles-daemon.balanced,
@@ -394,7 +409,7 @@ window#waybar #cpu * {
 /* Sound widget accent */
 #pulseaudio,
 #pulseaudio.muted {
-    background-color: @yellow;
+    background-color: @red;
     color: @fg;
 }
 
