@@ -373,3 +373,25 @@ window#waybar #cpu * {
     background-color: rgb(55, 55, 55);
     color: #ffffff;
 }
+
+/* Power button accent */
+#custom-power {
+    background-color: #f36a50;
+    color: #ffffff;
+}
+
+/* Sound widget accent */
+#pulseaudio,
+#pulseaudio.muted {
+    background-color: #f5cb3c;
+    color: #1f1f1f;
+}
+
+/* Power profile accent */
+#power-profiles-daemon,
+#power-profiles-daemon.performance,
+#power-profiles-daemon.balanced,
+#power-profiles-daemon.power-saver {
+    background-color: #6ac0a5;
+    color: #1f1f1f;
+}
