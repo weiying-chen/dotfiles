@@ -63,6 +63,8 @@ button:hover {
     padding: 0 5px;
     background-color: transparent;
     color: #ffffff;
+    border-radius: 9999px;
+    border-top-left-radius: 0;
 }
 
 #workspaces button:hover {
@@ -103,6 +105,8 @@ button:hover {
 #mpd {
     padding: 0 10px;
     color: #ffffff;
+    border-radius: 9999px;
+    border-top-left-radius: 0;
 }
 
 #window,
@@ -352,8 +356,9 @@ label:focus {
 #language,
 #custom-power {
     background-color: @bg;
-    border-radius: 10px;
     color: @fg;
+    border-radius: 9999px;
+    border-top-left-radius: 0;
 }
 
 /* Keep power profile states same gray as other widgets */
