@@ -4,6 +4,12 @@
     font-size: 13px;
 }
 
+@define-color fg #1f1f1f;
+@define-color bg #e8e8e8;
+@define-color yellow #f5cb3c;
+@define-color red #f36a50;
+@define-color green #6ac0a5;
+
 window#waybar {
     background-color: transparent;
     border-bottom: none;
@@ -325,7 +331,7 @@ label:focus {
     background-color: #0069d4;
 }
 
-/* Uniform rounded gray widgets */
+/* Uniform rounded light widgets */
 #clock,
 #battery,
 #cpu,
@@ -345,46 +351,46 @@ label:focus {
 #keyboard-state,
 #language,
 #custom-power {
-    background-color: rgb(55, 55, 55);
+    background-color: @bg;
     border-radius: 10px;
-    color: #ffffff;
+    color: @fg;
 }
 
 /* Keep power profile states same gray as other widgets */
 #power-profiles-daemon.performance,
 #power-profiles-daemon.balanced,
 #power-profiles-daemon.power-saver {
-    background-color: rgb(55, 55, 55);
-    color: #ffffff;
+    background-color: @bg;
+    color: @fg;
 }
 
 /* Normalize remaining module colors */
 #pulseaudio,
 #pulseaudio.muted,
 #memory {
-    background-color: rgb(55, 55, 55);
-    color: #ffffff;
+    background-color: @bg;
+    color: @fg;
 }
 
 
 /* Force CPU final override */
 window#waybar #cpu,
 window#waybar #cpu * {
-    background-color: rgb(55, 55, 55);
-    color: #ffffff;
+    background-color: @bg;
+    color: @fg;
 }
 
 /* Power button accent */
 #custom-power {
-    background-color: #f36a50;
+    background-color: @red;
     color: #ffffff;
 }
 
 /* Sound widget accent */
 #pulseaudio,
 #pulseaudio.muted {
-    background-color: #f5cb3c;
-    color: #1f1f1f;
+    background-color: @yellow;
+    color: @fg;
 }
 
 /* Power profile accent */
@@ -392,6 +398,6 @@ window#waybar #cpu * {
 #power-profiles-daemon.performance,
 #power-profiles-daemon.balanced,
 #power-profiles-daemon.power-saver {
-    background-color: #6ac0a5;
-    color: #1f1f1f;
+    background-color: @green;
+    color: @fg;
 }
