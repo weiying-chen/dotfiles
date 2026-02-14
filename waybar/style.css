@@ -93,6 +93,7 @@ button:hover {
 #idle_inhibitor,
 #scratchpad,
 #power-profiles-daemon,
+#custom-power,
 #mpd {
     padding: 0 10px;
     color: #ffffff;
@@ -253,6 +254,7 @@ label:focus {
     color: #2d3436;
 }
 
+#custom-power,
 #mpd {
     background-color: #66cc99;
     color: #2a5c45;
@@ -345,6 +347,7 @@ label:focus {
 #custom-power {
     background-color: rgb(55, 55, 55);
     border-radius: 10px;
+    color: #ffffff;
 }
 
 /* Keep power profile states same gray as other widgets */
