@@ -108,11 +108,6 @@ button:hover {
 #mpd {
     padding: 0 10px;
     color: #ffffff;
-    border-radius: 9999px;
-    border-top-left-radius: 0;
-    border-top-right-radius: 0;
-    border-bottom-left-radius: 8px;
-    border-bottom-right-radius: 8px;
 }
 
 #window,
@@ -363,17 +358,42 @@ label:focus {
 #custom-power {
     background-color: @bg;
     color: @fg;
+}
+
+/* Dynamic corner shaping */
+.modules-left > widget > *,
+.modules-center > widget > *,
+.modules-right > widget > * {
     border-radius: 9999px;
+}
+
+/* Left touching side: flatten top-left */
+.modules-left > widget:not(:first-child) > *,
+.modules-center > widget:not(:first-child) > *,
+.modules-right > widget:not(:first-child) > * {
     border-top-left-radius: 0;
 }
 
-/* Network: flat top, softer bottom corners */
-#network,
-#network.disconnected {
-    border-top-left-radius: 0;
+/* Right touching side: flatten top-right */
+.modules-left > widget:not(:last-child) > *,
+.modules-center > widget:not(:last-child) > *,
+.modules-right > widget:not(:last-child) > * {
     border-top-right-radius: 0;
+}
+
+/* Middle widgets (both top corners flat) need softer bottom corners */
+.modules-left > widget:not(:first-child):not(:last-child) > *,
+.modules-center > widget:not(:first-child):not(:last-child) > *,
+.modules-right > widget:not(:first-child):not(:last-child) > * {
     border-bottom-left-radius: 15px;
     border-bottom-right-radius: 15px;
+}
+
+/* Single widget in a group: default top-left flat */
+.modules-left > widget:first-child:last-child > *,
+.modules-center > widget:first-child:last-child > *,
+.modules-right > widget:first-child:last-child > * {
+    border-top-left-radius: 0;
 }
 
 /* Keep power profile states same gray as other widgets */
@@ -411,8 +431,6 @@ window#waybar #cpu * {
 #pulseaudio.muted {
     background-color: @red;
     color: @fg;
-    border-top-left-radius: 9999px;
-    border-top-right-radius: 0;
 }
 
 /* Power profile accent */
