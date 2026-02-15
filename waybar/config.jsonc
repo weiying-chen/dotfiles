@@ -202,7 +202,7 @@
     },
     "custom/power": {
         "format" : "",
-		"tooltip": false,
+			"tooltip": false,
 		"menu": "on-click",
 		"menu-file": "/usr/share/waybar/custom_modules/power_menu.xml", // Menu file in resources folder
 		"menu-actions": {
