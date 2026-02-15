@@ -1,0 +1,6 @@
+[Unit]
+Description=Weekly Ubuntu update reminder notification
+
+[Service]
+Type=oneshot
+ExecStart=/home/wei-ying-chen/.local/bin/update-reminder.sh

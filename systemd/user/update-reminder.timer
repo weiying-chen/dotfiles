@@ -1,0 +1,10 @@
+[Unit]
+Description=Weekly Ubuntu update reminder timer
+
+[Timer]
+OnCalendar=weekly
+Persistent=true
+Unit=update-reminder.service
+
+[Install]
+WantedBy=timers.target
