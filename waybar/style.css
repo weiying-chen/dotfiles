@@ -1,6 +1,6 @@
 * {
     /* `otf-font-awesome` is required to be installed for icons */
-    font-family: "la-solid-900", "la-regular-400", "la-brands-400", sans-serif;
+    font-family: "SUSE", "la-solid-900", "la-regular-400", "la-brands-400", sans-serif;
     font-size: 13px;
 }
 
@@ -358,6 +358,8 @@ label:focus {
 #custom-power {
     background-color: @bg;
     color: @fg;
+    margin: 3px 0;
+    border: 1px solid @fg;
 }
 
 /* Dynamic corner shaping */
