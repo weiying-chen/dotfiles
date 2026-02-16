@@ -433,7 +433,15 @@ window#waybar #cpu * {
 #pulseaudio,
 #pulseaudio.muted {
     background-color: @red;
-    color: @fg;
+    color: @bg;
+}
+
+/* Ensure pulseaudio inner labels/icons keep light text */
+window#waybar #pulseaudio,
+window#waybar #pulseaudio *,
+window#waybar #pulseaudio.muted,
+window#waybar #pulseaudio.muted * {
+    color: @bg;
 }
 
 /* Power profile accent */

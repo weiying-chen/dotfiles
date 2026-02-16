@@ -1,0 +1,5 @@
+#!/usr/bin/env sh
+set -e
+
+exec /home/wei-ying-chen/node/sub/node_modules/.bin/tsx \
+  /home/wei-ying-chen/node/sub/src/cli/fillSubs.ts "$@"
