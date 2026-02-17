@@ -1,2 +1,2 @@
 #!/usr/bin/env sh
-hyprctl keyword decoration:screen_shader "$HOME/dotfiles/hypr/shaders/night-warm.frag"
+hyprctl keyword decoration:screen_shader "$HOME/.config/hypr/shaders/night-warm.frag"
