@@ -2,5 +2,41 @@
 set -eu
 
 script_dir="$(CDPATH= cd -- "$(dirname -- "$0")" && pwd)"
+list_file="${YTLIST_FILE:-$HOME/.local/share/yt-audio-list.tsv}"
 url="$("$script_dir/ytl-pick")"
-exec mpv --no-video "$url"
+
+playlist_file="$(mktemp)"
+trap 'rm -f "$playlist_file"' EXIT INT TERM
+
+awk -F '\t' -v selected_url="$url" '
+  BEGIN {
+    count = 0
+    start = 0
+  }
+  {
+    if ($1 ~ /^https?:\/\//) {
+      count++
+      urls[count] = $1
+    }
+  }
+  END {
+    if (count == 0) {
+      exit 1
+    }
+
+    for (i = 1; i <= count; i++) {
+      if (urls[i] == selected_url) {
+        start = i
+        break
+      }
+    }
+    if (start == 0) {
+      start = 1
+    }
+
+    for (i = start; i <= count; i++) print urls[i]
+    for (i = 1; i < start; i++) print urls[i]
+  }
+' "$list_file" > "$playlist_file"
+
+mpv --no-video --playlist="$playlist_file" --loop-playlist=inf
