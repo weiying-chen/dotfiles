@@ -1,0 +1,9 @@
+theme = "gnome"
+
+[editor]
+shell = ["zsh", "-lc"]
+trim-trailing-whitespace = true
+trim-final-newlines = true
+
+[keys.normal]
+"space" = { "w" = ":write" }

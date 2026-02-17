@@ -1,0 +1,86 @@
+# Created by newuser for 5.9
+
+export HISTFILE="$HOME/.zsh_history"
+export HISTSIZE=10000
+export SAVEHIST=10000
+setopt APPEND_HISTORY
+setopt INC_APPEND_HISTORY
+setopt SHARE_HISTORY
+
+export HELIX_RUNTIME=/usr/local/lib/helix/runtime
+
+eval "$(starship init zsh)"
+
+export MCFLY_NORMALIZE=0
+eval "$(mcfly init zsh)"
+
+eval "$(direnv hook zsh)"
+
+alias lg='lazygit'
+
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"
+[ -s "$NVM_DIR/bash_completion" ] && . "$NVM_DIR/bash_completion"
+
+
+
+
+# CODEX_WAYLAND_DISPLAY_FIX
+# If an inherited WAYLAND_DISPLAY points to a dead socket, pick a live one.
+if [ -n "$XDG_RUNTIME_DIR" ]; then
+  if [ -n "$WAYLAND_DISPLAY" ] && [ ! -S "$XDG_RUNTIME_DIR/$WAYLAND_DISPLAY" ]; then
+    if [ -S "$XDG_RUNTIME_DIR/wayland-0" ]; then
+      export WAYLAND_DISPLAY=wayland-0
+    else
+      first_wayland_socket=$(ls "$XDG_RUNTIME_DIR"/wayland-* 2>/dev/null | head -n 1)
+      if [ -n "$first_wayland_socket" ]; then
+        export WAYLAND_DISPLAY="${first_wayland_socket##*/}"
+      fi
+    fi
+  fi
+fi
+
+# CODEX_UPDATE_PROMPT
+if [[ -o interactive ]] && [ -z "$TMUX" ]; then
+  _upd_stamp_dir="$HOME/.cache"
+  _upd_stamp_file="$_upd_stamp_dir/apt-update-prompt.date"
+  _upd_today="$(date +%F)"
+  mkdir -p "$_upd_stamp_dir"
+  _upd_last=""
+  [ -f "$_upd_stamp_file" ] && _upd_last="$(cat "$_upd_stamp_file" 2>/dev/null)"
+
+  if [ "$_upd_last" != "$_upd_today" ]; then
+    if command -v apt >/dev/null 2>&1 && apt list --upgradable 2>/dev/null | sed '1d' | grep -q .; then
+      printf "Run system updates now? [y/N] "
+      read -r _upd_ans
+      case "$_upd_ans" in
+        y|Y|yes|YES)
+          sudo apt update && sudo apt upgrade
+          ;;
+        *)
+          ;;
+      esac
+    fi
+    printf '%s\n' "$_upd_today" > "$_upd_stamp_file"
+  fi
+
+  unset _upd_stamp_dir _upd_stamp_file _upd_today _upd_last _upd_ans
+fi
+# Always start tmux (keep this LAST)
+if [[ -o interactive ]] && command -v tmux >/dev/null 2>&1; then
+  # Keep tmux global env in sync with current Wayland display
+  [ -n "$WAYLAND_DISPLAY" ] && tmux set-environment -g WAYLAND_DISPLAY "$WAYLAND_DISPLAY" 2>/dev/null || true
+  [ -n "$XDG_RUNTIME_DIR" ] && tmux set-environment -g XDG_RUNTIME_DIR "$XDG_RUNTIME_DIR" 2>/dev/null || true
+  if [ -z "$TMUX" ]; then
+    tmux attach || tmux new
+  fi
+fi
+
+export PATH="$HOME/.local/bin:$PATH"
+
+
+# Prefer user/local binaries first
+export PATH="/usr/local/bin:$PATH"
+
+# Prefer modern PipeWire client config name
+export PIPEWIRE_CONFIG_NAME="client.conf"
