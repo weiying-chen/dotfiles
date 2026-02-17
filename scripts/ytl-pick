@@ -1,0 +1,23 @@
+#!/usr/bin/env sh
+set -eu
+
+list_file="${YTLIST_FILE:-$HOME/.local/share/yt-audio-list.tsv}"
+
+if [ ! -s "$list_file" ]; then
+  echo "List is empty: $list_file" >&2
+  exit 1
+fi
+
+if ! command -v fzf >/dev/null 2>&1; then
+  echo "fzf is not installed" >&2
+  exit 1
+fi
+
+selected="$(
+  awk -F '\t' '{printf "%s\t%s\n", $2, $1}' "$list_file" \
+    | tac \
+    | fzf --prompt='ytlist> ' --delimiter="$(printf '\t')" --with-nth=1
+)"
+
+[ -n "$selected" ] || exit 1
+printf '%s\n' "$selected" | awk -F '\t' '{print $2}'

@@ -84,3 +84,6 @@ export PATH="/usr/local/bin:$PATH"
 
 # Prefer modern PipeWire client config name
 export PIPEWIRE_CONFIG_NAME="client.conf"
+
+# Simple YouTube audio list helpers
+export YTLIST_FILE="${YTLIST_FILE:-$HOME/.local/share/yt-audio-list.tsv}"
