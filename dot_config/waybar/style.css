@@ -10,7 +10,7 @@
 @define-color red #eb6f92;
 @define-color green #6ac0a5;
 @define-color cream #ea9a97;
-@define-color border #6e5c93;
+@define-color border #c4a7e7;
 
 window#waybar {
     background-color: transparent;
