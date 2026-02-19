@@ -2,25 +2,38 @@
 # Rosé Pine
 
 [colors]
-background=191724 
-foreground=e0def4 
+background=0000ff     # Base (e.g. background)
+foreground=ffffff     # Text (e.g. text)
 
-regular0=26233a     # black (Overlay)
-regular1=eb6f92     # red (Love)
-regular2=9ccfd8     # green (Foam)
-regular3=f6c177     # yellow (Gold)
-regular4=31748f     # blue (Pine)
-regular5=c4a7e7     # magenta (Iris)
-regular6=ebbcba     # cyan (Rose)
-regular7=e0def4     # white (Text)
+# regular0=26233a     # black (Overlay)
+regular0=ff5500     # DEBUG
+regular1=ff0000     # Love (e.g. git delete)
+regular2=00ff00     # Foam (e.g. git add)
+regular3=ffff00     # Gold (e.g. Ask Question)
+regular4=0000ff     # Pine (e.g. Cancel: <esc>)
+regular5=ff00ff     # Iris (e.g.  main)
+regular6=00ffff     # Rose (e.g. chezmoi apply)
+# regular7=e0def4     # white (Text)
+regular7=aaff00     # DEBUG
 
-bright0=47435d      # bright black (lighter Overlay)
-bright1=ff98ba      # bright red (lighter Love)
-bright2=c5f9ff      # bright green (lighter Foam)
-bright3=ffeb9e      # bright yellow (lighter Gold)
-bright4=5b9ab7      # bright blue (lighter Pine)
-bright5=eed0ff      # bright magenta (lighter Iris)
-bright6=ffe5e3      # bright cyan (lighter Rose)
-bright7=fefcff      # bright white (lighter Text)
+dim7=ff8800       # Subtle (e.g. 98% context left)
 
-flash=f6c177        # yellow (Gold)
+# bright0=6e6a86      # bright black (Muted); old: 47435d
+# bright1=ff98ba      # bright red (lighter Love)
+# bright2=c5f9ff      # bright green (lighter Foam)
+# bright3=ffeb9e      # bright yellow (lighter Gold)
+# bright4=5b9ab7      # bright blue (lighter Pine)
+# bright5=eed0ff      # bright magenta (lighter Iris)
+# bright6=ffe5e3      # bright cyan (lighter Rose)
+# bright7=908caa      # bright white (Subtle); old: fefcff
+bright0=00aaff      # DEBUG
+bright1=ff0055      # DEBUG
+bright2=00ff55      # DEBUG
+bright3=ffff00      # DEBUG
+bright4=0055ff      # DEBUG
+bright5=ff00ff      # DEBUG
+bright6=00ffff      # DEBUG
+bright7=ffffff      # DEBUG
+
+# flash=f6c177        # yellow (Gold)
+flash=ff8800        # DEBUG
