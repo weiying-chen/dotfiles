@@ -7,9 +7,9 @@ foreground=e0def4     # Text (e.g. text)
 
 # regular0=26233a     # black (Overlay)
 regular0=ff5500     # DEBUG
-regular1=eb6f92     # Love (e.g. git delete)
-regular2=9ccfd8     # Foam (e.g. git add)
-regular3=f6c177     # Gold (e.g. Ask Question)
+regular1=eb6f92     # Love (e.g. error)
+regular2=9ccfd8     # Foam (e.g. info)
+regular3=f6c177     # Gold (e.g. warning)
 regular4=31748f     # Pine (e.g. Cancel: <esc>)
 regular5=c4a7e7     # Iris (e.g.  main)
 regular6=ebbcba     # Rose (e.g. chezmoi apply)
