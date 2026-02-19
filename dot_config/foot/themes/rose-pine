@@ -3,18 +3,20 @@
 
 [colors]
 background=191724     # Base (e.g. background)
-foreground=e0def4     # Text (e.g. text)
+# foreground=e0def4     # Text (e.g. text)
+foreground=ffffff     # DEBUG
 
 # regular0=26233a     # black (Overlay)
-regular0=ff5500     # DEBUG
+regular0=191724     # Base (e.g. [0] 0:node* 1:sh-)
+# regular0=ff5500     # DEBUG
 regular1=eb6f92     # Love (e.g. error)
 regular2=9ccfd8     # Foam (e.g. info)
 regular3=f6c177     # Gold (e.g. warning)
 regular4=31748f     # Pine (e.g. Cancel: <esc>)
 regular5=c4a7e7     # Iris (e.g.  main)
 regular6=ebbcba     # Rose (e.g. chezmoi apply)
-# regular7=e0def4     # white (Text)
-regular7=aaff00     # DEBUG
+regular7=908caa     # white (Subtle, e.g. 98% context left)
+# regular7=aaff00     # DEBUG
 
 dim7=908caa       # Subtle (e.g. 98% context left)
 
