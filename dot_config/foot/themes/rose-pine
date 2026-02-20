@@ -4,39 +4,19 @@
 [colors-dark]
 background=191724     # Base (e.g. background)
 foreground=e0def4     # Text (e.g. text)
-# foreground=ffffff     # DEBUG
-# dim-blend-towards=white
 
-# regular0=26233a     # black (Overlay)
 regular0=191724     # Base (e.g. [0] 0:node* 1:sh-)
-# regular0=ff5500     # DEBUG
 regular1=eb6f92     # Love (e.g. error)
 regular2=9ccfd8     # Foam (e.g. info)
 regular3=f6c177     # Gold (e.g. warning)
 regular4=31748f     # Pine (e.g. Cancel: <esc>)
 regular5=c4a7e7     # Iris (e.g.  main)
 regular6=ebbcba     # Rose (e.g. chezmoi apply)
-# regular7=ff0000     # red
-# regular7=aaff00     # DEBUG
 
-# dim7=ff0000       # red
-
-# bright0=6e6a86      # bright black (Muted); old: 47435d
 bright0=00aaff      # DEBUG
-# bright1=ff98ba      # bright red (lighter Love)
 bright1=ff0055      # DEBUG
-# bright2=c5f9ff      # bright green (lighter Foam)
 bright2=00ff55      # DEBUG
-# bright3=ffeb9e      # bright yellow (lighter Gold)
 bright3=ffff00      # DEBUG
-# bright4=5b9ab7      # bright blue (lighter Pine)
-bright4=0055ff      # DEBUG
-# bright5=eed0ff      # bright magenta (lighter Iris)
+bright4=908caa      # Subtle (e.g. 2d 20h)
 bright5=ff00ff      # DEBUG
-# bright6=ffe5e3      # bright cyan (lighter Rose)
 bright6=00ffff      # DEBUG
-# bright7=908caa      # bright white (Subtle); old: fefcff
-# bright7=ff0000      # red
-
-# flash=f6c177        # yellow (Gold)
-flash=ff8800        # DEBUG
