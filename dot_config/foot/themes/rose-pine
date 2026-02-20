@@ -1,10 +1,11 @@
 # -*- conf -*-
 # Rosé Pine
 
-[colors]
+[colors-dark]
 background=191724     # Base (e.g. background)
-# foreground=e0def4     # Text (e.g. text)
-foreground=ffffff     # DEBUG
+foreground=e0def4     # Text (e.g. text)
+# foreground=ffffff     # DEBUG
+# dim-blend-towards=white
 
 # regular0=26233a     # black (Overlay)
 regular0=191724     # Base (e.g. [0] 0:node* 1:sh-)
@@ -15,10 +16,10 @@ regular3=f6c177     # Gold (e.g. warning)
 regular4=31748f     # Pine (e.g. Cancel: <esc>)
 regular5=c4a7e7     # Iris (e.g.  main)
 regular6=ebbcba     # Rose (e.g. chezmoi apply)
-regular7=908caa     # white (Subtle, e.g. 98% context left)
+# regular7=ff0000     # red
 # regular7=aaff00     # DEBUG
 
-dim7=ffffff       # Subtle (e.g. 98% context left) DEBUG
+# dim7=ff0000       # red
 
 # bright0=6e6a86      # bright black (Muted); old: 47435d
 bright0=00aaff      # DEBUG
@@ -35,7 +36,7 @@ bright5=ff00ff      # DEBUG
 # bright6=ffe5e3      # bright cyan (lighter Rose)
 bright6=00ffff      # DEBUG
 # bright7=908caa      # bright white (Subtle); old: fefcff
-bright7=ffffff      # DEBUG
+# bright7=ff0000      # red
 
 # flash=f6c177        # yellow (Gold)
 flash=ff8800        # DEBUG
