@@ -17,6 +17,6 @@ bright0=00aaff      # DEBUG
 bright1=ff0055      # DEBUG
 bright2=00ff55      # DEBUG
 bright3=ffff00      # DEBUG
-bright4=908caa      # Subtle (e.g. 2d 20h)
+bright4=31748f      # Pine (e.g. 2d 20h)
 bright5=ff00ff      # DEBUG
 bright6=00ffff      # DEBUG
