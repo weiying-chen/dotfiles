@@ -18,7 +18,7 @@ regular6=ebbcba     # Rose (e.g. chezmoi apply)
 regular7=908caa     # white (Subtle, e.g. 98% context left)
 # regular7=aaff00     # DEBUG
 
-dim7=908caa       # Subtle (e.g. 98% context left)
+dim7=ffffff       # Subtle (e.g. 98% context left) DEBUG
 
 # bright0=6e6a86      # bright black (Muted); old: 47435d
 bright0=00aaff      # DEBUG
