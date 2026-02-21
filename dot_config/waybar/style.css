@@ -6,8 +6,9 @@
 
 @define-color text #e0def4;
 @define-color base #191724;
-@define-color rose #ebbcba;
-@define-color subtle #908caa;
+/* @define-color rose #ebbcba; */
+@define-color love #eb6f92;
+/* @define-color subtle #908caa; */
 
 window#waybar {
     background-color: transparent;
@@ -355,10 +356,10 @@ label:focus {
 #keyboard-state,
 #language,
 #custom-power {
-    background-color: @base;
-    color: @text;
+    background-color: @text;
+    color: @base;
     margin: 0 4px 10px 4px;
-    border: 1px solid @subtle;
+    border: 1px solid @base;
     /* box-shadow: rgba(0, 0, 0, 0.12) 0 4px 0 0; */
 }
 
@@ -402,37 +403,37 @@ label:focus {
 #power-profiles-daemon.performance,
 #power-profiles-daemon.balanced,
 #power-profiles-daemon.power-saver {
-    background-color: @base;
-    color: @text;
+    background-color: @text;
+    color: @base;
 }
 
 /* Normalize remaining module colors */
 #pulseaudio,
 #pulseaudio.muted,
 #memory {
-    background-color: @base;
-    color: @text;
+    background-color: @text;
+    color: @base;
 }
 
 
 /* Force CPU final override */
 window#waybar #cpu,
 window#waybar #cpu * {
-    background-color: @base;
-    color: @text;
+    background-color: @text;
+    color: @base;
 }
 
 /* Power button accent */
 #custom-power {
-    background-color: @base;
-    color: @text;
+    background-color: @text;
+    color: @base;
 }
 
 /* Sound widget accent */
 #pulseaudio,
 #pulseaudio.muted {
-    background-color: @rose;
-    color: @base;
+    background-color: @love;
+    color: @text;
     border: 1px solid @base;
 }
 
@@ -441,7 +442,7 @@ window#waybar #pulseaudio,
 window#waybar #pulseaudio *,
 window#waybar #pulseaudio.muted,
 window#waybar #pulseaudio.muted * {
-    color: @base;
+    color: @text;
 }
 
 /* Power profile accent */
@@ -449,6 +450,6 @@ window#waybar #pulseaudio.muted * {
 #power-profiles-daemon.performance,
 #power-profiles-daemon.balanced,
 #power-profiles-daemon.power-saver {
-    background-color: @base;
-    color: @text;
+    background-color: @text;
+    color: @base;
 }
