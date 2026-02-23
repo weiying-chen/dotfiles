@@ -1,6 +1,6 @@
 {{- $osrelease := lower .chezmoi.kernel.osrelease -}}
 {{- $version := lower .chezmoi.kernel.version -}}
-{{- if or (contains $osrelease "microsoft") (contains $version "microsoft") }}
+{{- if or (contains "microsoft" $osrelease) (contains "microsoft" $version) }}
 .config/systemd/user/gvfs-afc-volume-monitor.service
 .config/systemd/user/gvfs-gphoto2-volume-monitor.service
 .config/systemd/user/gvfs-mtp-volume-monitor.service
