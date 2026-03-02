@@ -45,11 +45,22 @@ if [[ -o interactive ]] && [ -z "$TMUX" ]; then
   _upd_stamp_dir="$HOME/.cache"
   _upd_stamp_file="$_upd_stamp_dir/apt-update-prompt.date"
   _upd_today="$(date +%F)"
+  _upd_interval_days=7
   mkdir -p "$_upd_stamp_dir"
   _upd_last=""
   [ -f "$_upd_stamp_file" ] && _upd_last="$(cat "$_upd_stamp_file" 2>/dev/null)"
 
-  if [ "$_upd_last" != "$_upd_today" ]; then
+  _upd_should_prompt=1
+  if [ -n "$_upd_last" ]; then
+    _upd_last_ts=$(date -d "$_upd_last" +%s 2>/dev/null)
+    _upd_today_ts=$(date -d "$_upd_today" +%s 2>/dev/null)
+    if [ -n "$_upd_last_ts" ] && [ -n "$_upd_today_ts" ]; then
+      _upd_days_since=$(( (_upd_today_ts - _upd_last_ts) / 86400 ))
+      [ "$_upd_days_since" -lt "$_upd_interval_days" ] && _upd_should_prompt=0
+    fi
+  fi
+
+  if [ "$_upd_should_prompt" -eq 1 ]; then
     if command -v apt >/dev/null 2>&1 && apt list --upgradable 2>/dev/null | sed '1d' | grep -q .; then
       printf "Run system updates now? [y/N] "
       read -r _upd_ans
@@ -64,7 +75,7 @@ if [[ -o interactive ]] && [ -z "$TMUX" ]; then
     printf '%s\n' "$_upd_today" > "$_upd_stamp_file"
   fi
 
-  unset _upd_stamp_dir _upd_stamp_file _upd_today _upd_last _upd_ans
+  unset _upd_stamp_dir _upd_stamp_file _upd_today _upd_last _upd_ans _upd_interval_days _upd_should_prompt _upd_last_ts _upd_today_ts _upd_days_since
 fi
 # Always start tmux (keep this LAST)
 if [[ -o interactive ]] && command -v tmux >/dev/null 2>&1; then
