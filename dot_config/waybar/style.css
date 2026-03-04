@@ -8,7 +8,7 @@
 @define-color base #191724;
 /* @define-color rose #ebbcba; */
 @define-color love #eb6f92;
-/* @define-color subtle #908caa; */
+@define-color subtle #908caa;
 
 window#waybar {
     background-color: transparent;
@@ -356,10 +356,10 @@ label:focus {
 #keyboard-state,
 #language,
 #custom-power {
-    background-color: @text;
-    color: @base;
+    background-color: @base;
+    color: @text;
     margin: 0 4px 10px 4px;
-    border: 1px solid @base;
+    border: 1px solid @subtle;
     /* box-shadow: rgba(0, 0, 0, 0.12) 0 4px 0 0; */
 }
 
@@ -403,37 +403,36 @@ label:focus {
 #power-profiles-daemon.performance,
 #power-profiles-daemon.balanced,
 #power-profiles-daemon.power-saver {
-    background-color: @text;
-    color: @base;
+    background-color: @base;
+    color: @text;
 }
 
 /* Normalize remaining module colors */
 #pulseaudio,
 #pulseaudio.muted,
 #memory {
-    background-color: @text;
-    color: @base;
+    color: @text;
 }
 
 
 /* Force CPU final override */
 window#waybar #cpu,
 window#waybar #cpu * {
-    background-color: @text;
-    color: @base;
+    background-color: @base;
+    color: @text;
 }
 
 /* Power button accent */
 #custom-power {
-    background-color: @text;
-    color: @base;
+    background-color: @base;
+    color: @text;
 }
 
 /* Sound widget accent */
 #pulseaudio,
 #pulseaudio.muted {
     background-color: @love;
-    color: @text;
+    color: @base;
     border: 1px solid @base;
 }
 
@@ -442,7 +441,7 @@ window#waybar #pulseaudio,
 window#waybar #pulseaudio *,
 window#waybar #pulseaudio.muted,
 window#waybar #pulseaudio.muted * {
-    color: @text;
+    color: @base;
 }
 
 /* Power profile accent */
@@ -450,6 +449,6 @@ window#waybar #pulseaudio.muted * {
 #power-profiles-daemon.performance,
 #power-profiles-daemon.balanced,
 #power-profiles-daemon.power-saver {
-    background-color: @text;
-    color: @base;
+    background-color: @base;
+    color: @text;
 }
