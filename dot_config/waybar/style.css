@@ -356,7 +356,7 @@ label:focus {
 #keyboard-state,
 #language,
 #custom-power {
-    background-color: @base;
+    background-color: rgba(25, 23, 36, 0.80);
     color: @text;
     margin: 0 4px 10px 4px;
     border: 1px solid @subtle;
@@ -403,7 +403,7 @@ label:focus {
 #power-profiles-daemon.performance,
 #power-profiles-daemon.balanced,
 #power-profiles-daemon.power-saver {
-    background-color: @base;
+    background-color: rgba(25, 23, 36, 0.80);
     color: @text;
 }
 
@@ -418,20 +418,20 @@ label:focus {
 /* Force CPU final override */
 window#waybar #cpu,
 window#waybar #cpu * {
-    background-color: @base;
+    background-color: rgba(25, 23, 36, 0.80);
     color: @text;
 }
 
 /* Power button accent */
 #custom-power {
-    background-color: @base;
+    background-color: rgba(25, 23, 36, 0.80);
     color: @text;
 }
 
 /* Sound widget accent */
 #pulseaudio,
 #pulseaudio.muted {
-    background-color: @love;
+    background-color: rgba(235, 111, 146, 0.80);
     color: @base;
     border: 1px solid @base;
 }
@@ -449,6 +449,6 @@ window#waybar #pulseaudio.muted * {
 #power-profiles-daemon.performance,
 #power-profiles-daemon.balanced,
 #power-profiles-daemon.power-saver {
-    background-color: @base;
+    background-color: rgba(25, 23, 36, 0.80);
     color: @text;
 }
