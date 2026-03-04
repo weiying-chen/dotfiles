@@ -356,10 +356,10 @@ label:focus {
 #keyboard-state,
 #language,
 #custom-power {
-    background-color: rgba(25, 23, 36, 0.80);
-    color: @text;
+    background-color: rgba(224, 222, 244, 0.80);
+    color: @base;
     margin: 0 4px 10px 4px;
-    border: 1px solid @subtle;
+    border: 1px solid @base;
     /* box-shadow: rgba(0, 0, 0, 0.12) 0 4px 0 0; */
 }
 
@@ -403,29 +403,29 @@ label:focus {
 #power-profiles-daemon.performance,
 #power-profiles-daemon.balanced,
 #power-profiles-daemon.power-saver {
-    background-color: rgba(25, 23, 36, 0.80);
-    color: @text;
+    background-color: rgba(224, 222, 244, 0.80);
+    color: @base;
 }
 
 /* Normalize remaining module colors */
 #pulseaudio,
 #pulseaudio.muted,
 #memory {
-    color: @text;
+    color: @base;
 }
 
 
 /* Force CPU final override */
 window#waybar #cpu,
 window#waybar #cpu * {
-    background-color: rgba(25, 23, 36, 0.80);
-    color: @text;
+    background-color: rgba(224, 222, 244, 0.80);
+    color: @base;
 }
 
 /* Power button accent */
 #custom-power {
-    background-color: rgba(25, 23, 36, 0.80);
-    color: @text;
+    background-color: rgba(224, 222, 244, 0.80);
+    color: @base;
 }
 
 /* Sound widget accent */
@@ -449,6 +449,6 @@ window#waybar #pulseaudio.muted * {
 #power-profiles-daemon.performance,
 #power-profiles-daemon.balanced,
 #power-profiles-daemon.power-saver {
-    background-color: rgba(25, 23, 36, 0.80);
-    color: @text;
+    background-color: rgba(224, 222, 244, 0.80);
+    color: @base;
 }
