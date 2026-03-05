@@ -1,4 +1,4 @@
-theme = "gnome"
+theme = "rose_pine_transparent"
 
 [editor]
 shell = ["zsh", "-lc"]
@@ -6,4 +6,4 @@ trim-trailing-whitespace = true
 trim-final-newlines = true
 
 [keys.normal]
-"space" = { "w" = ":write" }
+"space" = { "w" = ":write", "l" = ":reload" }
