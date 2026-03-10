@@ -1,4 +1,13 @@
-# Repository Guidelines
+# Agent Instructions
+
+## Git commits
+
+- Use short commit messages in sentence case (only the first word capitalized).
+- Do not use Conventional Commits prefixes (e.g. `feat:`, `fix:`).
+
+## Testing workflow
+
+- For every code change, add a generic test, make sure it fails first, then implement the code and make sure it passes.
 
 ## Project Structure & Module Organization
 
@@ -31,7 +40,6 @@ No automated test suite currently.
 - Fast sanity checks (external repo): `python3 -m py_compile ~/python/watchpick/watchpick.py`
 - Smoke test: run `watchpick --print --no-run` to validate argument parsing and command generation.
 
-## Commit & Pull Request Guidelines
+## Pull request guidelines
 
-- Commits use short, imperative subjects (e.g., “Add …”, “Make …”); keep subjects concise and focused on the user-visible outcome.
-- PRs should include: what changed, why, an example invocation (command line), and any new/changed env vars or external tool requirements.
+- PRs should include what changed, why, an example invocation when relevant, and any new or changed env vars or external tool requirements.
